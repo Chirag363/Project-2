@@ -1,14 +1,31 @@
-import { Button } from "@/components/ui/button";
-import { HStack } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { Route, Routes } from 'react-router-dom';
 
-const Demo = () => {
+import Navbar from "./components/ui/Navbar";
+import CreatePage from "./pages/CreatePage";
+import HomePage from "./pages/HomePage";
+
+
+
+const App = () => {
   return (
-    <HStack>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-    </HStack>
+    <Box minH={"100vh"}>
+      <Navbar/>
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/create" element={<CreatePage />} />
+      </Routes>
+      
+    </Box>
   )
 }
 
+export default App 
 
-export default App;
+
+
+
+
+
+// npm i @chakra-ui/react@v2.10.3 @emotion/react @emotion/styled framer-motion
+// npm i @chakra-ui/icons@v2.1.1
