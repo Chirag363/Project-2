@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { Route, Routes } from 'react-router-dom';
 
-import Navbar from "./components/ui/Navbar";
+import Navbar from "./components/Navbar";
 import CreatePage from "./pages/CreatePage";
 import HomePage from "./pages/HomePage";
 
