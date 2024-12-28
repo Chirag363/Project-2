@@ -12,7 +12,15 @@
 
     "test": "echo \"Error: no test specified\" && exit 1",
 
-    "dev": "nodemon backend/server.js"
+    "server": "nodemon backend/server.js",
+
+    "client": "cd frontend && npm run dev",
+
+    "dev": "concurrently \"cross-env NODE_ENV=development npm run server\" \"npm run client\"",
+
+    "build": "npm install && cd frontend && npm install && npm run build",
+
+    "start": "cross-env NODE_ENV=production node backend/server.js"
 
   },
 
@@ -37,6 +45,10 @@
   },
 
   "devDependencies": {
+
+    "concurrently": "^9.1.1",
+
+    "cross-env": "^7.0.3",
 
     "nodemon": "^3.1.9"
 
